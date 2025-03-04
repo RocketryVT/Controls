@@ -1,14 +1,8 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+#![no_std]
+#![no_main]
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub mod pid;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+// Re-export the madgwick module/crate
+// ahrs actually has madgwick and mahony filters based on the new Fusion library
+pub use ahrs as madgwick;
