@@ -19,10 +19,10 @@ pub struct PID<T> {
 }
 
 pub struct Config<T> {
-    integral_windup_guard: T,
-    integral_windup_max: T,
-    num_samples: T,
-    enable_integral_anti_windup: bool,
+    pub integral_windup_guard: T,
+    pub integral_windup_max: T,
+    pub num_samples: T,
+    pub enable_integral_anti_windup: bool,
 }
 
 impl<
@@ -76,14 +76,17 @@ impl<
         }
     }
 
+    #[allow(dead_code)]
     fn set_integral(&mut self, integral: T) {
         self.integral = integral;
     }
 
+    #[allow(dead_code)]
     fn set_last_error(&mut self, last_error: T) {
         self.last_error = last_error;
     }
 
+    #[allow(dead_code)]
     fn set_last_time(&mut self, last_time: T) {
         self.last_time = last_time;
     }
